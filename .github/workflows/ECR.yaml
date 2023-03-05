@@ -36,3 +36,7 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+    - name: Deploy the APP
+      run: |
+       aws ecs update-service --cluster Test --region us-west-2 --service cicd --task-definition cicd-demo:1 --desired-count 1 --force-new-deployment
