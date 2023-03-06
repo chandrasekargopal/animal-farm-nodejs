@@ -5,7 +5,8 @@ var port = process.env.PORT || 8080;
 var animals = {
   "cat": "meow",
   "dog": "bark",
-  "Lion": "roar"
+  "Lion": "roar",
+  "demo": "test"
 }
 
 function getAnimal() {
